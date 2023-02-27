@@ -1,7 +1,9 @@
 const nodemailer = require("nodemailer");
+require('dotenv').config()
 const Email = {
   // The Simple Mail Transfer Protocol is an Internet standard communication protocol for electronic mail transmission. Mail servers and other message transfer agents use SMTP to send and receive mail messages
   Message: function (req, res) {
+    console.log(process.env)
     try {
       console.log(req.file);
       let body = JSON.parse(req.body.values);
@@ -12,8 +14,8 @@ const Email = {
         port: 465,
         secure: false,
         auth: {
-          user: "syeddkrock@gmail.com",
-          pass: "rnumwheludraocgs",
+          user:process.env.userName,
+          pass: process.env.password,
         },
       });
 
