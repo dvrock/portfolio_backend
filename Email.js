@@ -39,7 +39,9 @@ const Email = {
   //             }
   //         });
   // })
-  
+  res.json({
+    message:body
+  })
 }catch (err) {
       res.json({
         message: err.message,
