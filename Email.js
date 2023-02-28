@@ -10,7 +10,11 @@ const Email = {
         service: "gmail",
         host: "smtp.gmail.com",
         port: 465,
-        secure: false,       
+        secure: false,
+        auth: {
+          user: "syeddkrock@gmail.com",
+          pass: "rnumwheludraocgs",
+        },
       });
 
       var mail_options = {
@@ -18,13 +22,7 @@ const Email = {
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
         text: `${body.details}`,
-        html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,
-        attachments: [
-          {
-            filename: req.file.filename,
-            path: req.file.path,
-          },
-        ],
+        html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,       
       };
 
       Transport.sendMail(mail_options, function (err, resp) {
