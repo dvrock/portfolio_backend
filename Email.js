@@ -46,6 +46,9 @@ const Email = {
       //     console.log(resp);
       //   }
       // });
+      res.json({
+        message: "hello",
+      });
     } catch (err) {
       res.json({
         message: err.message,
