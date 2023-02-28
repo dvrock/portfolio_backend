@@ -21,14 +21,7 @@ const Email = {
         from: "syeddkrock@gmail.com",
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
-        text: `hello`,
-        
-        attachments: [
-          {
-            filename: req.file.filename,
-            path: req.file.path,
-          },
-        ],
+        text: `hello`,              
       };
       new Promise((resolve, reject) => {
         Transport.sendMail(mail_options, function (error, response) {
