@@ -22,7 +22,13 @@ const Email = {
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
         text: `${body.details}`,
-        html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,       
+        html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,
+        attachments: [
+          {
+            filename: req.file.filename,
+            path: req.file.path,
+          },
+        ],
       };
 
       Transport.sendMail(mail_options, function (err, resp) {
