@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/uploads", express.static("./uploads"));
-app.use("/submit", route);
+app.use("/", route);
 app.use("*", (req, res, next) => {
   req.status = 404;
   const error = new Error("Route not found");
