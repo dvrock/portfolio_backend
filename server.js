@@ -10,7 +10,7 @@ app.use(bodyparser.json());
 // const mongoErrors = require("mongoose-mongodb-errors");
 // mongoose.Promise = global.Promise;
 // mongoose.plugin(mongoErrors);
-let url = 3001 || 3002 || 3003;
+let url = 3002 || 3001 || 3003;
 const route = require("./routes/routes");
 app.use(express.json());
 app.use(cors());
