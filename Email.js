@@ -10,11 +10,7 @@ const Email = {
         service: "gmail",
         host: "smtp.gmail.com",
         port: 465,
-        secure: false,
-        auth: {
-          user: "syeddkrock@gmail.com",
-          pass: "rnumwheludraocgs",
-        },
+        secure: false,       
       });
 
       var mail_options = {
