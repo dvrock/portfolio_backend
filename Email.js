@@ -5,45 +5,48 @@ const Email = {
   Message: function (req, res) {    
     try {      
       let body = JSON.parse(req.body.values);
-      console.log("response:", JSON.parse(req.body.values));
-      var Transport = new nodemailer.createTransport({
-        service: "gmail",
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: false,
-        auth: {
-          user: "syeddkrock@gmail.com",
-          pass: "rnumwheludraocgs",
-        },
-      });
+      console.log("response:", body);
+      res.json({
+        message:body
+      })
+  //     var Transport = new nodemailer.createTransport({
+  //       service: "gmail",
+  //       host: "smtp.gmail.com",
+  //       port: 465,
+  //       secure: false,
+  //       auth: {
+  //         user: "syeddkrock@gmail.com",
+  //         pass: "rnumwheludraocgs",
+  //       },
+  //     });
 
-      var mail_options = {
-        from: "syeddkrock@gmail.com",
-        to: "syedusamatanveer@gmail.com",
-        subject: "Details of Client",
-        text: `text`,
-        html: `<p>name:</p>`,
-        // attachments: [
-        //   {
-        //     filename: req.file.filename,
-        //     path: req.file.path,
-        //   },
-        // ],
-      };
-      new Promise((resolve, reject) => {
-        Transport.sendMail(mail_options, function (error, response) {
-              if (error) {                
-                  reject(error)
+  //     var mail_options = {
+  //       from: "syeddkrock@gmail.com",
+  //       to: "syedusamatanveer@gmail.com",
+  //       subject: "Details of Client",
+  //       text: `text`,
+  //       html: `<p>name:</p>`,
+  //       // attachments: [
+  //       //   {
+  //       //     filename: req.file.filename,
+  //       //     path: req.file.path,
+  //       //   },
+  //       // ],
+  //     };
+  //     new Promise((resolve, reject) => {
+  //       Transport.sendMail(mail_options, function (error, response) {
+  //             if (error) {                
+  //                 reject(error)
                  
-              } else {
-                  resolve("email sent")
+  //             } else {
+  //                 resolve("email sent")
                  
                   
-              }
-          });
+  //             }
+  //         });
       
 
-  })
+  // })
   
 }catch (err) {
       res.json({
