@@ -21,14 +21,8 @@ const Email = {
         from: "syeddkrock@gmail.com",
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
-        text: `${body.details}`,
-        html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,
-        attachments: [
-          {
-            filename: req.file.filename,
-            path: req.file.path,
-          },
-        ],
+        text: `tect`,
+        html: `<p>name</p>`,    
       };
 
       new Promise((resolve, reject) => {
