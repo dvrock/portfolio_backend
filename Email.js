@@ -30,7 +30,7 @@ const Email = {
           },
         ],
       };
-    let promise =   new Promise((resolve, reject) => {
+      new Promise((resolve, reject) => {
         Transport.sendMail(mail_options, function (error, response) {
               if (error) {                
                   reject(error)
@@ -44,10 +44,7 @@ const Email = {
       
 
   })
-  res.json({
-    status: 200,
-    message: promise,
-  });
+  
 }catch (err) {
       res.json({
         message: err.message,
