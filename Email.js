@@ -23,13 +23,14 @@ const Email = {
         subject: "Details of Client",
         text: `${body.details}`,
         html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,
-        attachments: [
-          {
-            filename: req.file.filename,
-            path: req.file.path,
-          },
-        ],
+        // attachments: [
+        //   {
+        //     filename: req.file.filename,
+        //     path: req.file.path,
+        //   },
+        // ],
       };
+      
       new Promise((resolve, reject) => {
         Transport.sendMail(mail_options, function (error, response) {
               if (error) {                
@@ -37,14 +38,16 @@ const Email = {
                  
               } else {
                   resolve("email sent")
-                 
+                
                   
               }
           });
       
 
   })
-  
+  res.json({
+    message:body
+   })
 }catch (err) {
       res.json({
         message: err.message,
