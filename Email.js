@@ -21,8 +21,8 @@ const Email = {
         from: "syeddkrock@gmail.com",
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
-        text: `${body.details}`,
-        html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,
+        text: `text`,
+        html: `<p>name:</p>`,
         attachments: [
           {
             filename: req.file.filename,
