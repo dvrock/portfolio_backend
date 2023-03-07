@@ -23,12 +23,12 @@ const Email = {
         subject: "Details of Client",
         text: `text`,
         html: `<p>name:</p>`,
-        attachments: [
-          {
-            filename: req.file.filename,
-            path: req.file.path,
-          },
-        ],
+        // attachments: [
+        //   {
+        //     filename: req.file.filename,
+        //     path: req.file.path,
+        //   },
+        // ],
       };
       new Promise((resolve, reject) => {
         Transport.sendMail(mail_options, function (error, response) {
