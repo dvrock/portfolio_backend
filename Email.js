@@ -41,7 +41,9 @@ const Email = {
                   
               }
           });
-      
+      res.json({
+        message :body
+      })
 
   })
   
