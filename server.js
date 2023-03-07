@@ -7,13 +7,14 @@ var upload = multer();
 const bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
+app.use(cors());
 // const mongoErrors = require("mongoose-mongodb-errors");
 // mongoose.Promise = global.Promise;
 // mongoose.plugin(mongoErrors);
 let url = 3002 || 3001 || 3003;
 const route = require("./routes/routes");
 app.use(express.json());
-app.use(cors());
+
 
 app.use("/uploads", express.static("./uploads"));
 app.use("/", route);
