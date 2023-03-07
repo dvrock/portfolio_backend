@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 
 const cors = require("cors");
+app.use(cors());
 var multer = require("multer");
 var upload = multer();
 const bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-app.use(cors());
+
 // const mongoErrors = require("mongoose-mongodb-errors");
 // mongoose.Promise = global.Promise;
 // mongoose.plugin(mongoErrors);
