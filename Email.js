@@ -21,26 +21,33 @@ const Email = {
         from: "syeddkrock@gmail.com",
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
-        text: `text`,
-        html: `<p>name</p>`,
-        // attachments: [
-        //   {
-        //     filename: req.file.filename,
-        //     path: req.file.path,
-        //   },
-        // ],
+        text: `${body.details}`,
+        html: `<p>name:${body.name} details:${body.details} email:${body.email}</p>`,
+        attachments: [
+          {
+            filename: req.file.filename,
+            path: req.file.path,
+          },
+        ],
       };
-      new Promise((resolve, reject) => {
+    let promise =   new Promise((resolve, reject) => {
         Transport.sendMail(mail_options, function (error, response) {
               if (error) {                
                   reject(error)
                  
               } else {
-                  resolve("email sent")                 
-                  console.log(resp);
+                  resolve("email sent")
+                 
+                  
               }
           });
+      
+
   })
+  res.json({
+    status: 200,
+    message: promise,
+  });
 }catch (err) {
       res.json({
         message: err.message,
