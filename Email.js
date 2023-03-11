@@ -33,10 +33,7 @@ const Email = {
             resolve("email sent");
           }
         });
-      });
-      res.json({
-        message: body,
-      });
+      });      
     } catch (err) {
       res.json({
         message: err.message,
