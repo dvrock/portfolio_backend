@@ -21,7 +21,7 @@ const Email = {
         from: "syeddkrock@gmail.com",
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
-        text: `tect`,
+        text: `text`,
         html: `<p>name</p>`,    
       };
 
