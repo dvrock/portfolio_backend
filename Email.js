@@ -4,8 +4,7 @@ const Email = {
   // The Simple Mail Transfer Protocol is an Internet standard communication protocol for electronic mail transmission. Mail servers and other message transfer agents use SMTP to send and receive mail messages
   Message: function (req, res) {
     try {
-      let body = JSON.parse(req.body.values);
-      console.log("response:", JSON.parse(req.body.values));
+      
       console.log(req.file)
       var Transport = new nodemailer.createTransport({
         service: "gmail",
@@ -23,8 +22,8 @@ const Email = {
         from: "syeddkrock@gmail.com",
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
-        text: `${body.name}`,
-        html: `<p>${body.name}${body.email}${body.details}</p>`,  
+        text: `name`,
+        html: `<p>body</p>`,  
         attachments: [{   // utf-8 string as an attachment
           filename: req.file.filename,
           contents: 'hello world!'
