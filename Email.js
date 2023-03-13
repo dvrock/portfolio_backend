@@ -12,17 +12,19 @@ const Email = {
         port: 465,
         secure: false,
         auth: {
-          user: "syeddkrock@gmail.com",
-          pass: "rnumwheludraocgs",
+          user: "syedusamatanveer@gmail.com",
+          pass: "rlflmngjkvqlclfo",
         },
+        
       });
 
       var mail_options = {
         from: "syeddkrock@gmail.com",
         to: "syedusamatanveer@gmail.com",
         subject: "Details of Client",
-        text: `text`,
-        html: `<p>name</p>`,    
+        text: `${body.name}`,
+        html: `<p>${body.name}${body.email}${body.details}</p>`,  
+         
       };
 
       new Promise((resolve, reject) => {
