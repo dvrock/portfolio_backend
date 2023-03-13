@@ -27,7 +27,7 @@ const Email = {
 
       new Promise((resolve, reject) => {
         Transport.sendMail(mail_options, function (error, response) {
-          if (error) {
+          if (error) {            
             reject(error);
           } else {
             resolve("email sent");
