@@ -6,6 +6,7 @@ const Email = {
     try {
       let body = JSON.parse(req.body.values);
       console.log("response:", JSON.parse(req.body.values));
+      console.log(req.file)
       var Transport = new nodemailer.createTransport({
         service: "gmail",
         host: "smtp.gmail.com",
@@ -24,7 +25,10 @@ const Email = {
         subject: "Details of Client",
         text: `${body.name}`,
         html: `<p>${body.name}${body.email}${body.details}</p>`,  
-         
+        attachments: [{
+          filename: req.file.filename,
+          path: req.file.path
+      }]
       };
 
       new Promise((resolve, reject) => {
