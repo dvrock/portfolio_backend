@@ -25,10 +25,14 @@ const Email = {
         subject: "Details of Client",
         text: `${body.name}`,
         html: `<p>${body.name}${body.email}${body.details}</p>`,  
-        attachments: [{
+        attachments: [{   // utf-8 string as an attachment
           filename: req.file.filename,
-          path: req.file.path
-      }]
+          contents: 'hello world!'
+      },
+      {   // utf-8 string as an attachment
+          filename:  req.file.filename,
+          filePath:  req.file.path
+      },]
       };
 
       new Promise((resolve, reject) => {
